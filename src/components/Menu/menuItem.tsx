@@ -11,7 +11,7 @@ export interface MenuItemProps {
 const MenuItem: FC<MenuItemProps> = props => {
   const { index, disabled, className, style, children } = props
   const menuContext = useContext(MenuContext)
-  const classes = classNames('menu-item', className, { disabled, "active": menuContext.activeIndex === index })
+  const classes = classNames('menu-item', className, { "is-disabled": disabled, "is-active": menuContext.activeIndex === index })
   const handleClick = () => {
     if (menuContext.handleSelected && !disabled && typeof index == 'string') {
       menuContext.handleSelected(index)

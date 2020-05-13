@@ -1,5 +1,4 @@
-import React, { useState, FC } from 'react'
-import { action } from '@storybook/addon-actions'
+import React, { useState, } from 'react'
 import Input from './input'
 export default {
   component: Input,

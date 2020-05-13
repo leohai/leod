@@ -89,8 +89,13 @@ export const Upload: FC<UploadProps> = (props) => {
 
   }
   let post = (file: File) => {
-    const _file = {
-      uid: Date.now + 'upload-file', name: file.name, size: file.size, percentage: 0, raw: file
+    const _file: UploadFile = {
+      uid: Date.now + 'upload-file',
+      name: file.name,
+      size: file.size,
+      percentage: 0,
+      raw: file,
+      status: 'ready'
     }
     setFileList([_file, ...fileList])
     const formData = new FormData()
@@ -113,15 +118,15 @@ export const Upload: FC<UploadProps> = (props) => {
           onProgress(percentage, file)
         }
       }
-    }).then((data: any) => {
+    }).then((resp: any) => {
       updateFileList(_file, { status: 'success' })
       if (onSuccess) {
-        onSuccess(data, file)
+        onSuccess(resp.data, file)
       }
       if (onChange) {
         onChange(file)
       }
-      console.log(data)
+
     }).catch((err: any) => {
       updateFileList(_file, { status: 'error' })
       if (onError) {

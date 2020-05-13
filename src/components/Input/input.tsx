@@ -40,7 +40,7 @@ export const Input: FC<InputProps> = (props) => {
     delete restProps.defaultValue
     restProps.value = fixControlledValue(restProps.value)
   }
-  return <div className={klcass} {...restProps}>
+  return <div className={klcass} >
     {prepend && <div className="leod-input-group-prepend">{prepend}</div>}
     {icon && <div className="icon-wrapper"><Icon icon={icon} title={`title-${icon}`} /></div>}
     <input

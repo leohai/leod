@@ -35,7 +35,7 @@ const Menu: FC<MenuProps> = props => {
     defaultOpenSubMenus
   }
 
-  const classes = classNames('leo-menu', className,
+  const classes = classNames('leod-menu', className,
     {
       'menu-vertical': mode === "vertical",
       'menu-horizontal': mode !== 'vertical',

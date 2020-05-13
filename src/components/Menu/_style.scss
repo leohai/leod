@@ -1,4 +1,4 @@
-.leo-menu {
+.leod-menu {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -49,7 +49,7 @@
       transform: rotate(180deg) !important;
     }
   }
-  .leo-submenu {
+  .leod-submenu {
     // display: none;
     list-style:none;
     padding-left: 0;
@@ -65,7 +65,7 @@
       }
     }
   }
-  .leo-submenu.menu-opened {
+  .leod-submenu.menu-opened {
     // display: block;
   }
 }
@@ -73,7 +73,7 @@
   >.menu-item {
     border-bottom: $menu-item-active-border-width solid transparent;
   }
-  .leo-submenu {
+  .leod-submenu {
     position: absolute;
     background: $white;
     z-index: 100;
