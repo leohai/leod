@@ -2,13 +2,14 @@ import React, { useContext, useState, FunctionComponentElement } from 'react'
 import classNames from 'classnames'
 import { MenuContext } from './menu'
 import { MenuItemProps } from './menuItem'
+import Transition from '../Transition'
 export interface SubMenuProps {
   index?: string;
   title: string;
   className?: string;
 }
 
-const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) => {
+export const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) => {
   const context = useContext(MenuContext)
   const openedSubMenus = context.defaultOpenSubMenus as Array<string>
   const isOpend = (index && context.mode === 'vertical') ? openedSubMenus.includes(index) : false
@@ -52,9 +53,15 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
       }
     })
     return (
-      <ul className={subMenuClasses}>
-        {childrenComponent}
-      </ul>
+      <Transition
+        in={menuOpen}
+        timeout={300}
+        animation="zoom-in-top"
+      >
+        <ul className={subMenuClasses}>
+          {childrenComponent}
+        </ul>
+      </Transition>
     )
   }
   return (

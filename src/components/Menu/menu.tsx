@@ -66,4 +66,4 @@ Menu.defaultProps = {
   mode: "horizontal",
   defaultOpenSubMenus: []
 }
-export default Menu
+export default Menu;
