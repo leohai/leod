@@ -4,4 +4,13 @@ node_js:
 cache: yarn
 env:
   - CI=true
+script:
+  - yarn build-storybook
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: storybook-static
+  on:
+    branch: test3
 
