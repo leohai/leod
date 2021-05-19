@@ -3,6 +3,9 @@ node_js:
   - stable
 env:
   - CI=true
+  - CXX=g++-5
+install:
+  - yarn
 script:
   - yarn build-storybook
 deploy:
